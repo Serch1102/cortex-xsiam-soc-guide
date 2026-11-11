@@ -1,0 +1,7 @@
+# Configuración personal y estado local
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+.DS_Store
+Thumbs.db
