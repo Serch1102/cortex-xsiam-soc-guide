@@ -17,7 +17,30 @@ Cuando un equipo o servicio envía un evento a XSIAM (por ejemplo, mediante un a
 
 **Referencias técnicas:** [Parsing Rules](https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Create-Parsing-Rules) · [Mapeo XDM (MODEL)](https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/MODEL) · [Consultas y presets](https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/XQL-language-features) · [XSIAM 4.0 y Data Model Acceleration](https://www.paloaltonetworks.com/blog/security-operations/cortex-xsiam-4-0-ai-knows-your-enterprise/).
 
-## Ejemplo
+## Analogía y equivalencias con Google SecOps y Microsoft Sentinel
+
+Imagina que investigamos autenticaciones de Windows y de un proveedor de identidad cloud. **El raw log es el mensaje original**, un **dataset** permite consultarlo dentro de XSIAM, el **preset** facilita acceder a un subconjunto útil para la investigación y **XDM** aporta nombres y estructuras comunes para correlacionar fuentes heterogéneas.
+
+Si ya conoces otras plataformas SIEM, estos paralelismos ayudan a situar los conceptos:
+
+| Cortex XSIAM | Google SecOps (Chronicle) | Microsoft Sentinel / Azure |
+|---|---|---|
+| **Raw log** | Raw log original antes o junto a la representación UDM | Evento recibido en una tabla de Log Analytics |
+| **Dataset** | Registros consultables en Google SecOps (raw y/o normalizados en UDM; **no hay equivalencia 1:1 con el dataset XQL**) | Tabla del workspace de Log Analytics, como `SecurityEvent` o `SigninLogs` |
+| **Preset** | Búsqueda preparada o reutilizable (**analogía funcional, no componente equivalente**) | Consulta KQL guardada o función de consulta (**analogía funcional**) |
+| **XDM** | **UDM (Unified Data Model)** | **ASIM (Advanced Security Information Model)** |
+| **XQL** | Búsquedas UDM para investigar; **YARA-L** para reglas de detección | **KQL** para consultar datos y definir lógica de reglas analíticas |
+
+### Diferencia técnica que sí importa
+
+Los tres sistemas buscan hacer comparables eventos de proveedores distintos, **pero no normalizan necesariamente en el mismo momento**. Google SecOps utiliza parsers que convierten registros originales a **UDM** como parte de la canalización de ingesta, o puede recibir eventos previamente normalizados. En Microsoft Sentinel, **ASIM** puede normalizar mediante funciones/parsers **KQL al consultar** y también existen tablas ASIM con **normalización durante la ingesta**. En XSIAM, el comportamiento depende de la versión y de la configuración de parsing y mapeo XDM (véase el apartado anterior). Por eso, **UDM, ASIM y XDM persiguen fines similares, pero no son implementaciones intercambiables**.
+
+### Aplicación SOC
+
+Si una búsqueda de autenticaciones muestra campos vacíos en XSIAM, no basta con asumir que «faltan logs». Contrasta **el evento original, la extracción de campos y la normalización**, del mismo modo que en Google SecOps revisarías el *parser* y el mapeo UDM y en Sentinel comprobarías la tabla de Log Analytics y el parser ASIM correspondiente. Una capa de normalización no puede recuperar información que la fuente nunca envió.
+
+**Fuentes:** [Google SecOps — UDM](https://docs.cloud.google.com/chronicle/docs/event-processing/udm-overview) · [Google SecOps — parsing](https://docs.cloud.google.com/chronicle/docs/event-processing/parsing-overview) · [Microsoft Sentinel — parsers ASIM](https://learn.microsoft.com/en-us/azure/sentinel/normalization-parsers-overview) · [Microsoft Sentinel — normalización durante la ingesta y consulta](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solution-quality-guidance).
+
 Un firewall puede nombrar `src_ip` al origen, otro proveedor `clientIp`. Una normalización coherente permite investigar ambos de forma comparable. No presupongas que todas las fuentes traen el mismo nivel de detalle.
 
 ## Primeros pasos
