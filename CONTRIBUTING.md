@@ -12,6 +12,10 @@ Cada contribución debe permitir que un analista entienda una función de XSIAM 
 6. Falsos positivos, limitaciones y permisos.
 7. Preguntas para el analista y fuentes.
 
+## Analogías y comparaciones entre plataformas
+
+Cuando sirvan para aprender, añade una sección **«Analogía y equivalencias con otras herramientas»**. Prioriza **Google SecOps (Chronicle)** y **Microsoft Sentinel/Azure**. Parte de una situación real del SOC, compara finalidad y diferencias técnicas y aclara los casos en los que no existe equivalencia directa. No uses una tabla de productos como sustituto de una explicación del funcionamiento de XSIAM. Conserva documentación del fabricante cuando el comportamiento exacto sea relevante.
+
 ## Control de cambios
 Trabaja en una rama y abre una Pull Request. Revisión por otra persona antes de fusionar. Indica versión de XSIAM, fuentes consultadas y si la query se ha probado en un entorno autorizado.
 
