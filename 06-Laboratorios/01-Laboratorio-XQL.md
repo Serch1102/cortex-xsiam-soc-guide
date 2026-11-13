@@ -32,4 +32,4 @@ Redacta una detección de password spraying: datos, lógica, umbral, supresión,
 ## Criterio de corrección
 Se evalúa que puedas explicar qué demuestra la query, qué no demuestra y cuáles son los límites de la fuente.
 
-[Introducción XQL](../01-XQL/01-Introduccion-XQL.md) · [JOIN](../01-XQL/04-JOIN-entre-datasets.md).
+[Introducción XQL](../01-XQL/01-Introduccion-XQL.md) · [JOIN](../01-XQL/04-JOIN-entre-datasets.md) · [Caso integral](03-Caso-integral-identidad-y-deteccion.md).
