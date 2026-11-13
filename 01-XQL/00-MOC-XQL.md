@@ -8,3 +8,5 @@ tags: [moc, xql]
 - [COMP](03-Agregaciones-COMP.md)
 - [JOIN](04-JOIN-entre-datasets.md)
 - [Optimización](05-Optimizar-y-depurar.md)
+- [Tiempos, ventanas y recepción tardía](06-Tiempos-y-ventanas.md)
+- [JOIN avanzado, cardinalidad y causalidad](07-JOIN-y-correlaciones-engañosas.md)
