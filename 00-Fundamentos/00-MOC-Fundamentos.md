@@ -7,3 +7,4 @@ tags: [moc, xsiam]
 - [Datasets, presets y XDM](02-Datasets-Presets-y-XDM.md)
 - [Alertas, Issues y Cases](03-Alertas-Issues-y-Cases.md)
 - [Flujo de investigación SOC](04-Flujo-investigacion-SOC.md)
+- [Calidad, cobertura y salud de la ingesta](05-Visibilidad-y-calidad-de-ingesta.md)
