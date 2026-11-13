@@ -29,4 +29,4 @@ Una consulta encuentra una conducta sospechosa, pero queremos que el sistema la 
 
 **Fuente:** [Documentación oficial de creación de reglas](https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Create-a-correlation-rule).
 
-[Diseño](01-Diseno-de-detecciones.md) · [Validación y tuning](04-Validacion-y-tuning.md).
+[Diseño](01-Diseno-de-detecciones.md) · [Validación y tuning](04-Validacion-y-tuning.md) · [Ciclo de vida](05-Ciclo-de-vida-de-una-regla.md) · [Supresión y excepciones](06-Supresion-y-excepciones.md).
