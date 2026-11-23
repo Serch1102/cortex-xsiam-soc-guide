@@ -20,7 +20,7 @@ Documentación **en castellano**, orientada al trabajo de analistas SOC L1, L2 y
 5. [Filtros y operadores](01-XQL/02-Filtros-y-operadores.md)
 6. [Agregaciones con COMP](01-XQL/03-Agregaciones-COMP.md)
 7. [JOIN entre datasets](01-XQL/04-JOIN-entre-datasets.md)
-9. [Gráficos y series temporales en XQL (DNS)](01-XQL/06-Graficos-y-series-temporales.md)
+8. [Gráficos y series temporales en XQL (DNS)](01-XQL/06-Graficos-y-series-temporales.md)
 9. [Investigación SOC](02-Investigacion/01-Procesos-y-parent-child.md)
 10. [Diseño de detecciones](03-Detecciones/01-Diseno-de-detecciones.md)
 11. [Laboratorio guiado](06-Laboratorios/01-Laboratorio-XQL.md)
