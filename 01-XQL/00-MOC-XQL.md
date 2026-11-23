@@ -8,3 +8,4 @@ tags: [moc, xql]
 - [COMP](03-Agregaciones-COMP.md)
 - [JOIN](04-JOIN-entre-datasets.md)
 - [Optimización](05-Optimizar-y-depurar.md)
+- [Gráficos y series temporales (ejemplo DNS)](06-Graficos-y-series-temporales.md)
